@@ -8,8 +8,9 @@
 /*global define: false, exports: false, require: false, module: false */
 
 ( function( window, undefined ) {
-
 'use strict';
+
+if (!window) return;
 
 // -------------------------- helpers -------------------------- //
 
@@ -201,15 +202,15 @@ return getSize;
 }
 
 // transport
-if ( typeof define === 'function' && define.amd ) {
-  // AMD for RequireJS
-  define( [ 'get-style-property/get-style-property' ], defineGetSize );
-} else if ( typeof exports === 'object' ) {
+if ( typeof exports === 'object' ) {
   // CommonJS for Component
   module.exports = defineGetSize( require('desandro-get-style-property') );
+} else if ( typeof define === 'function' && define.amd ) {
+  // AMD for RequireJS
+  define( [ 'get-style-property/get-style-property' ], defineGetSize );
 } else {
   // browser global
   window.getSize = defineGetSize( window.getStyleProperty );
 }
 
-})( window );
+})( typeof window !== 'undefined' ? window : null );
