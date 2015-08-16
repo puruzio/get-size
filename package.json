@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/desandro/get-size",
   "dependencies": {
-    "desandro-get-style-property": "eiriklv/get-style-property"
+    "desandro-get-style-property": "https://github.com/eiriklv/get-style-property/archive/a5a74ad48d96c7d5ddcf652e9fa5d4283af37823.tar.gz"
   }
 }
